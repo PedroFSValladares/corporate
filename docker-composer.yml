@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app-front:
+    build:
+      context: ./WebApp
+      dockerfile: dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - rh-api
+  rh-api:
+    build:
+      context: ./pedrovalladaresapi
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"

@@ -1,0 +1,27 @@
+# Ignorar arquivos do build local
+bin/
+obj/
+out/
+
+# Ignorar arquivos do IDE
+.vs/
+.idea/
+.vscode/
+
+# Ignorar pacotes NuGet baixados localmente
+*.nupkg
+packages/
+.nuget/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dev scripts
+scripts/
+
+# Ignorar dependências do Node.js
+node_modules/
