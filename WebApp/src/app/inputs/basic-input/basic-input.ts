@@ -14,9 +14,9 @@ export class BasicInput{
   inputId = input<string>();
   label = input<string>("Label");
   type = input<string>("text");
+  desabilitado = input<boolean>(false);
 
   constructor(private cdr: ChangeDetectorRef) {
-
 
   }
 

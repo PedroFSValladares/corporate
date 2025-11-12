@@ -1,5 +1,9 @@
 <div class="m-2">
   <label for="{{inputName()}}" class="form-label">{{label()}}</label>
-  <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" class="form-control"/>
+  @if(desabilitado()){
+    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" class="form-control" disabled/>
+  }@else{
+    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" class="form-control"/>
+  }
 </div>
 

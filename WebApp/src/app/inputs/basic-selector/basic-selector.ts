@@ -1,6 +1,7 @@
 import {Component, input} from '@angular/core';
 import {CargoResumido} from '../../model/CargoResumido';
 import {SelectorOption} from './SelectorOption';
+import {BasicInput} from '../basic-input/basic-input';
 
 @Component({
   selector: 'app-basic-selector',
@@ -8,9 +9,6 @@ import {SelectorOption} from './SelectorOption';
   templateUrl: './basic-selector.html',
   styleUrl: './basic-selector.css'
 })
-export class BasicSelector {
-  label = input<string>();
-  inputName = input<string>();
-  inputId = input<string>();
+export class BasicSelector extends BasicInput{
   itens = input<SelectorOption[]>();
 }
