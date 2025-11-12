@@ -62,9 +62,15 @@
             {{funcionario.status ? "Ativo" : "Inativo"}}
           </td>
           <td>
-            <a class="btn btn-secondary" [routerLink]="['./detalhar/', funcionario.cpf]">Detalhar</a>
-            <a class="btn btn-primary" [routerLink]="['./alterar/', funcionario.cpf]">Alterar</a>
-            <a class="btn btn-danger" [routerLink]="['./inativar/', funcionario.cpf]">Inativar</a>
+            <a class="btn btn-secondary" [routerLink]="['./detalhar/', funcionario.cpf]">
+             <img src="icons/detalhar_24px.png">
+            </a>
+            <a class="btn btn-primary" [routerLink]="['./alterar/', funcionario.cpf]">
+              <img src="icons/editar_24px.png">
+            </a>
+            <a class="btn btn-danger" [routerLink]="['./inativar/', funcionario.cpf]">
+              <img src="icons/inativar_24px.png">
+            </a>
           </td>
         </tr>
       } @empty {
