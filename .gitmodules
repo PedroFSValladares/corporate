@@ -1,6 +1,0 @@
-[submodule "WebApp"]
-	path = WebApp
-	url = git@github.com:PedroFSValladares/corporate-web-app.git
-[submodule "pedrovalladaresapi"]
-	path = pedrovalladaresapi
-	url = git@github.com:PedroFSValladares/GestaoRH.git
