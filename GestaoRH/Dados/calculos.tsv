@@ -1,0 +1,6 @@
+nome	calculo	aplicavel em todos	tipo calculo
+Remuneração	([REMUNERAÇÃO_CARGO] / [QNTD_DIAS_UTEIS]) * [QNTD_DIAS_TRABALHADOS]	sim	somativo
+Vale transporte	[TOTAL_VALOR_VIAGENS] * [QNTD_DIAS_TRABALHADOS]	sim	somativo
+Dedução vale transporte	SE(CALCULO(“Vale transporte”) <= ([REMUNERAÇÃO_CARGO] * 0.6); CALCULO(“Vale transporte”); ([REMUNERAÇÃO_CARGO] * 0.06))	sim	dedutivo
+Vale alimentação	([VALOR_VALE_ALIMENTAÇÃO] / [QNTD_DIAS_UTEIS]) * [QNTD_DIAS_TRABALHADOS]	sim	somativo
+Dedução vale alimentação	(([VALOR_VALE_ALIMENTAÇÃO] / [QNTD_DIAS_UTEIS]) * [QNTD_DIAS_TRABALHADOS]) * 0.2	sim	dedutivo

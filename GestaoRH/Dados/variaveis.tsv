@@ -1,0 +1,8 @@
+nome	descrição
+[TOTAL_VALOR_VIAGENS]	Total gasto nas viagens para ida e volta ao ambiente de trabalho
+[REMUNERAÇÃO_CARGO]	Remuneração base do cargo ocupado pelo funcionário
+[VALOR_VALE_ALIMENTAÇÃO]	Valor recebido de vale alimentação
+[CARGA_HORARIA_SEMANAL]	Carga horária semanal do funcionário
+[HORAS_TRABALHADAS]	Quantidade de horas trabalhadas no mês
+[QNTD_DIAS_UTEIS]	Quantidade de dias uteis no mês, excluindo fins de semana e feriados
+[QNTD_DIAS_TRABALHADOS]	Quantidade de dias trabalhados no mês

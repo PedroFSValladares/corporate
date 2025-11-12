@@ -1,0 +1,52 @@
+Nome	CPF	Email	Telefone	CEP	Logradouro	Complemento	Bairro	UF	Matrícula	CargoId
+Pedro Henrique	05194273193	pedro.valladares@empresa.com	(61) 1234-5678	12345678	Rua das Flores, 10	Apt 101	Centro	SP	2023001	1
+Ana Silva	12345678901	ana.silva@empresa.com	(11) 98765-4321	01000001	Rua das Flores, 10	Apt 101	Centro	SP	2023001	1
+Bruno Souza	23456789012	bruno.souza@empresa.com	(21) 97654-3210	20000002	Av. Atlântica, 1200	Bloco B, Sala 5	Copacabana	RJ	2023002	2
+Carla Oliveira	34567890123	carla.oliveira@empresa.com	(31) 96543-2109	30000003	Praça da Liberdade, 50	Sala 203	Savassi	MG	2023003	3
+Daniel Pereira	45678901234	daniel.pereira@empresa.com	(41) 95432-1098	80000004	Alameda Santos, 300	Conjunto 7	Batel	PR	2023004	4
+Eduarda Costa	56789012345	eduarda.costa@empresa.com	(51) 94321-0987	90000005	Rua da Praia, 250	Sala 12	Moinhos de Vento	RS	2023005	5
+Fernando Rodrigues	67890123456	fernando.rodrigues@empresa.com	(61) 93210-9876	70000006	Eixo Monumental, Setor Norte	Edifício Alfa	Asa Norte	DF	2023006	6
+Gabriela Martins	78901234567	gabriela.martins@empresa.com	(71) 92109-8765	40000007	Av. Oceânica, 400	Apt 505	Ondina	BA	2023007	7
+Henrique Almeida	89012345678	henrique.almeida@empresa.com	(81) 91098-7654	50000008	Rua do Sol, 700	Sala 301	Boa Viagem	PE	2023008	8
+Isabella Lima	90123456789	isabella.lima@empresa.com	(91) 90987-6543	66000009	Av. Presidente Vargas, 1500	Loja 1	Campina	PA	2023009	9
+João Gonçalves	01234567890	joao.goncalves@empresa.com	(11) 98765-1234	01000010	R. Augusta, 800	10º Andar	Consolação	SP	2023010	10
+Juliana Ferreira	11223344556	juliana.ferreira@empresa.com	(21) 97654-5678	20000011	R. Sete de Setembro, 20	Cobertura	Centro	RJ	2023011	1
+Kevin Nunes	22334455667	kevin.nunes@empresa.com	(31) 96543-9012	30000012	Av. Afonso Pena, 100	Apt 3	Funcionários	MG	2023012	2
+Larissa Santos	33445566778	larissa.santos@empresa.com	(41) 95432-3456	80000013	R. XV de Novembro, 1000	Casa	Centro	PR	2023013	3
+Marcelo Ribeiro	44556677889	marcelo.ribeiro@empresa.com	(51) 94321-7890	90000014	Av. Osvaldo Aranha, 500	Fundos	Bom Fim	RS	2023014	4
+Natália Pires	55667788990	natalia.pires@empresa.com	(61) 93210-2345	70000015	SGAS 610, Bloco C	Sala 50	Asa Sul	DF	2023015	5
+Otávio Rocha	66778899001	otavio.rocha@empresa.com	(71) 92109-6789	40000016	Rua Chile, 30	Edifício Alpha	Comércio	BA	2023016	6
+Patrícia Mendes	77889900112	patricia.mendes@empresa.com	(81) 91098-0123	50000017	Av. Conselheiro Aguiar, 100	Apt 1001	Pina	PE	2023017	7
+Rafael Duarte	88990011223	rafael.duarte@empresa.com	(91) 90987-4567	66000018	Tv. Dr. Moraes, 200	Cj 12	Nazaré	PA	2023018	8
+Sofia Castro	99001122334	sofia.castro@empresa.com	(11) 98765-8901	01000019	Av. Paulista, 1500	20º Andar	Cerqueira César	SP	2023019	9
+Thiago Lima	00112233445	thiago.lima@empresa.com	(21) 97654-2109	20000020	Rua da Lapa, 80	Sala 4	Lapa	RJ	2023020	10
+Ursula Dantas	11223344557	ursula.dantas@empresa.com	(31) 96543-5678	30000021	Rua Cláudio Manuel, 90	Loja 2	Santo Antônio	MG	2023021	1
+Victor Barreto	22334455668	victor.barreto@empresa.com	(41) 95432-9012	80000022	Rua das Rosas, 500	Casa 2	Água Verde	PR	2023022	2
+Wallace Gomes	33445566779	wallace.gomes@empresa.com	(51) 94321-3456	90000023	Av. Loureiro da Silva, 120	Apt 30	Centro Histórico	RS	2023023	3
+Xênia Paiva	44556677890	xenia.paiva@empresa.com	(61) 93210-7890	70000024	SMDB Conj. 12	Casa 1	Lago Sul	DF	2023024	4
+Yasmin Freire	55667788901	yasmin.freire@empresa.com	(71) 92109-2345	40000025	Rua dos Bancários, 10	Andar 1	Pituba	BA	2023025	5
+Zeca Pires	66778899002	zeca.pires@empresa.com	(81) 91098-6789	50000026	Av. Boa Viagem, 2000	Apt 202	Setúbal	PE	2023026	6
+Amanda Dutra	77889900113	amanda.dutra@empresa.com	(91) 90987-0123	66000027	Av. Gentil Bittencourt, 1000	Sala 500	São Brás	PA	2023027	7
+Bernardo Cordeiro	88990011224	bernardo.cordeiro@empresa.com	(11) 98765-4567	01000028	Rua Haddock Lobo, 400	Cj 10	Jardins	SP	2023028	8
+Cecília Guedes	99001122335	cecilia.guedes@empresa.com	(21) 97654-8901	20000029	Rua do Lavradio, 70	Sobrado	Centro	RJ	2023029	9
+Diego Noronha	00112233446	diego.noronha@empresa.com	(31) 96543-2109	30000030	R. Pernambuco, 100	Sala 1	Sion	MG	2023030	10
+Elisa Franco	11223344558	elisa.franco@empresa.com	(41) 95432-5678	80000031	R. Desembargador Motta, 100	Apt 120	Centro	PR	2023031	1
+Fábio Nunes	22334455669	fabio.nunes@empresa.com	(51) 94321-9012	90000032	Av. Independência, 800	Bloco C	Independência	RS	2023032	2
+Giselle Campos	33445566780	giselle.campos@empresa.com	(61) 93210-3456	70000033	SHIS QL 06	Casa 3	Lago Sul	DF	2023033	3
+Hugo Vasconcelos	44556677891	hugo.vasconcelos@empresa.com	(71) 92109-7890	40000034	Rua da Graça, 20	Edifício D	Graça	BA	2023034	4
+Ingrid Queiroz	55667788902	ingrid.queiroz@empresa.com	(81) 91098-2345	50000035	Rua Barão de Souza Leão, 500	Apt 500	Piedade	PE	2023035	5
+Jorge Mendes	66778899003	jorge.mendes@empresa.com	(91) 90987-6789	66000036	Av. Alcindo Cacela, 1200	Loja 10	Umarizal	PA	2023036	6
+Karina Siqueira	77889900114	karina.siqueira@empresa.com	(11) 98765-0123	01000037	R. Oscar Freire, 1000	Sala 120	Pinheiros	SP	2023037	7
+Leonardo Farias	88990011225	leonardo.farias@empresa.com	(21) 97654-4567	20000038	R. Visconde de Pirajá, 300	Cj 5	Ipanema	RJ	2023038	8
+Mariana Alves	99001122336	mariana.alves@empresa.com	(31) 96543-8901	30000039	R. Santa Rita Durão, 200	Apt 10	Lourdes	MG	2023039	9
+Nuno Gomes	00112233447	nuno.gomes@empresa.com	(41) 95432-2109	80000040	Av. Cândido Hartmann, 50	Sobrado	Mercês	PR	2023040	10
+Olivia Resende	11223344559	olivia.resende@empresa.com	(51) 94321-5678	90000041	Rua da República, 150	Sala 30	Cidade Baixa	RS	2023041	1
+Pedro Vasquez	22334455670	pedro.vasquez@empresa.com	(61) 93210-9012	70000042	QI 03, Bloco A	Loja 2	Lago Norte	DF	2023042	2
+Renata Sales	33445566781	renata.sales@empresa.com	(71) 92109-3456	40000043	Av. Sete de Setembro, 1000	Apt 707	Vitória	BA	2023043	3
+Samuel Miranda	44556677892	samuel.miranda@empresa.com	(81) 91098-7890	50000044	Av. Engenheiro Boa Viagem, 1000	Sala 4	Boa Viagem	PE	2023044	4
+Tainá Lins	55667788903	taina.lins@empresa.com	(91) 90987-2345	66000045	Trav. Padre Eutíquio, 300	Cj 1	Batista Campos	PA	2023045	5
+Ulysses Neves	66778899004	ulysses.neves@empresa.com	(11) 98765-6789	01000046	R. Vergueiro, 2000	Apt 150	Vila Mariana	SP	2023046	6
+Vanessa Brito	77889900115	vanessa.brito@empresa.com	(21) 97654-0123	20000047	Rua da Consolação, 50	Sala 10	Centro	RJ	2023047	7
+Wagner Elias	88990011226	wagner.elias@empresa.com	(31) 96543-4567	30000048	R. Timbiras, 50	Edifício Beta	Funcionários	MG	2023048	8
+Ximena Flores	99001122337	ximena.flores@empresa.com	(41) 95432-8901	80000049	R. Marechal Deodoro, 120	Loja 5	Centro	PR	2023049	9
+Yara Rocha	00112233448	yara.rocha@empresa.com	(51) 94321-2109	90000050	Av. Protásio Alves, 100	Fundos	Rio Branco	RS	2023050	10

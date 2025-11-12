@@ -1,0 +1,11 @@
+Id	Nome	Remuneração	Vale Alimentação	Vale Transporte	Periculosidade	Insalubridade	Carga Horária
+1	Desenvolvedor Frontend	7500.00	600.00	200.00	Não	Não	40
+2	Analista de Dados	8200.00	650.00	180.00	Não	Não	40
+3	Gerente de Projetos	12000.00	800.00	250.00	Não	Não	40
+4	Técnico de Manutenção	3800.00	450.00	150.00	Sim	Sim	44
+5	Recepcionista	2100.00	350.00	120.00	Não	Não	30
+6	Engenheiro Civil	9500.00	700.00	220.00	Sim	Não	44
+7	Assistente Administrativo	2800.00	400.00	140.00	Não	Não	40
+8	Enfermeiro	5500.00	500.00	160.00	Não	Sim	36
+9	Contador	6300.00	550.00	170.00	Não	Não	40
+10	Coordenador de Marketing	9800.00	750.00	230.00	Não	Não	40
