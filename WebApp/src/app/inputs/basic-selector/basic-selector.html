@@ -1,0 +1,9 @@
+<div class="m-2">
+  <label for={{inputName()}} class="form-label">{{label()}}</label>
+  <select name={{inputName()}} id={{inputId()}} class="form-control">
+    <option value=""></option>
+    @for (item of itens(); track item.value){
+      <option value="{{item.value}}">{{item.name}}</option>
+    }
+  </select>
+</div>

@@ -1,0 +1,14 @@
+.main-container{
+  display: grid;
+  grid-template-columns: 12rem auto;
+  height: 100%;
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+.app-content{
+  margin: .25rem .25rem .25rem .12rem;
+}
+.side-menu{
+
+  margin: .25rem .12rem .25rem .25rem;
+}

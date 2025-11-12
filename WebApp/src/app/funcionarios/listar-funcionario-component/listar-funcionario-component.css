@@ -1,0 +1,22 @@
+.d-flex {
+  grid-template-rows: auto auto;
+  grid-auto-columns: auto;
+}
+form{
+  background-color: white;
+  border-radius: 1rem;
+}
+.app-section{
+  overflow: auto;
+}
+.page-button{
+  border: none;
+  padding: .20rem .70rem;
+}
+.pagination-area{
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+}
+table{
+  text-align: center;
+}
