@@ -12,7 +12,11 @@ export class CargoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  obterCargos(): Observable<ApiResponse<CargoResumido>>{
-    return this.httpClient.get<ApiResponse<CargoResumido>>(environment.apiUrl+'/cargos');
+  obterCargos(): Observable<ApiResponse<CargoResumido[]>>{
+    return this.httpClient.get<ApiResponse<CargoResumido[]>>(`${environment.apiUrl}/cargos`);
+  }
+
+  obterCargoPorId(id:number) : Observable<ApiResponse<CargoResumido>>{
+    return this.httpClient.get<ApiResponse<CargoResumido>>(`${environment.apiUrl}/cargos/${id}`);
   }
 }
