@@ -17,7 +17,7 @@ export class BasicInput{
   desabilitado = input<boolean>(false);
   inputValue = input<string>();
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor() {
 
   }
 

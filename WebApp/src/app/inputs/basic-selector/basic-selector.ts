@@ -1,6 +1,6 @@
 import {Component, input} from '@angular/core';
 import {CargoResumido} from '../../model/CargoResumido';
-import {SelectorOption} from './SelectorOption';
+import {SelectorOption} from '../../model/SelectorOption';
 import {BasicInput} from '../basic-input/basic-input';
 
 @Component({

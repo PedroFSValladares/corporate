@@ -5,7 +5,7 @@ import {RouterLink} from '@angular/router';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoService} from '../../services/cargo-service/cargo-service';
-import {SelectorOption} from '../../inputs/basic-selector/SelectorOption';
+import {SelectorOption} from '../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

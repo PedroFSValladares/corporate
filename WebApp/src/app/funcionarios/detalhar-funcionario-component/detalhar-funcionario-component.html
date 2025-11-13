@@ -1,1 +1,59 @@
-<p>detalhar-funcionario-component works!</p>
+<form class="app-section pt-2 pb-2" method="" action="#">
+  <h4 class="ms-2">Detalhar Funcionário</h4>
+  <div class="container d-flex justify-content-end">
+    <a (click)="voltarPagina()" class="btn btn-primary">Voltar</a>
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <app-basic-input inputName="nome" label="Nome:" inputValue="{{funcionario.nome}}" [desabilitado]="true"></app-basic-input>
+    </div>
+    <div class="col">
+      <app-basic-input inputName="cpf" label="CPF:" inputValue="{{funcionario.cpf}}" [desabilitado]="true"></app-basic-input>
+    </div>
+  </div>
+  <div class="row">
+    <div  class="col-5">
+      <app-basic-input inputName="email" label="Email:" inputValue="{{funcionario.email}}" [desabilitado]="true"></app-basic-input>
+    </div>
+    <div class="col">
+      <app-cargo-selector inputName="cargo" label="Cargo:" inputValue="{{funcionario.cargoId}}" [carregarTudo]="false" [desabilitado]="true"></app-cargo-selector>
+    </div>
+    <div class="col">
+      <app-basic-input inputName="matricula" label="Matrícula:" inputValue="{{funcionario.matricula}}" [desabilitado]="true"></app-basic-input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}" [desabilitado]="true"></app-basic-input>
+    </div>
+  </div>
+  <h6>Endereço:</h6>
+  <hr/>
+  <div class="row">
+    <div class="col-2">
+      <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco?.cep}}" [desabilitado]="true"></app-basic-input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco?.logradouro}}" [desabilitado]="true"></app-basic-input>
+    </div>
+    <div class="col">
+      <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco?.bairro}}" [desabilitado]="true"></app-basic-input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}" [desabilitado]="true"></app-basic-input>
+    </div>
+    <div class="col">
+      <app-basic-selector inputName="UF" label="UF" [desabilitado]="true"></app-basic-selector>
+    </div>
+  </div>
+  <app-basic-input inputName="ativo" label="Status:" [desabilitado]="true"></app-basic-input>
+
+  <div ngbDropdown class="dropdown">
+    <a ngbDropdownToggle class="dropdown-toggle">Viagens</a>
+  </div>
+
+</form>

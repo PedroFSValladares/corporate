@@ -7,7 +7,7 @@
   } @else {
     <select name={{inputName()}} id={{inputId()}} class="form-control" value="{{inputValue()}}">
       <option value=""></option>
-      @for (item of itens(); track item.value){
+      @for (item of itens; track item.value){
         <option value="{{item.value}}">{{item.name}}</option>
       }
     </select>
