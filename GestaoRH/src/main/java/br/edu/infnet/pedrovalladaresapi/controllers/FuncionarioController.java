@@ -41,7 +41,7 @@ public class FuncionarioController {
     @GetMapping("/{cpf}")
     public ResponseEntity<RequestResponse> obterPorId(@PathVariable String cpf){
         var funcionario = funcionariosService.obterPorId(cpf);
-        return funcionario == null ? RequestResponse.getByCode(HttpStatus.NOT_FOUND, null) : RequestResponse.getByCode(HttpStatus.OK, funcionario);
+        return funcionario == null ? RequestResponse.getByCode(HttpStatus.NOT_FOUND, null) : RequestResponse.getByCode(HttpStatus.OK, funcionario.toFuncionarioCompletoDTO());
     }
 
     @GetMapping
