@@ -1,9 +1,9 @@
 <div class="m-2">
   <label for="{{inputName()}}" class="form-label">{{label()}}</label>
   @if(desabilitado()){
-    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" class="form-control" disabled/>
+    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" value="{{inputValue()}}" class="form-control" disabled/>
   }@else{
-    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" class="form-control"/>
+    <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" value="{{inputValue()}}" class="form-control"/>
   }
 </div>
 
