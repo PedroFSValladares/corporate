@@ -1,12 +1,13 @@
 <div class="m-2">
   <label for={{inputName()}} class="form-label">{{label()}}</label>
   @if(desabilitado()){
-    <select name={{inputName()}} id={{inputId()}} class="form-control" disabled value="{{inputValue()}}">
-      <option value=""></option>
+    <select name={{inputName()}} id={{inputId()}} class="form-control" selectedIndex="{{inputValue()}}" disabled>
+      @for (item of itens(); track item.value){
+        <option value="{{item.value}}">{{item.name}}</option>
+      }
     </select>
   } @else {
     <select name={{inputName()}} id={{inputId()}} class="form-control" value="{{inputValue()}}">
-      <option value=""></option>
       @for (item of itens(); track item.value){
         <option value="{{item.value}}">{{item.name}}</option>
       }

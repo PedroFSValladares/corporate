@@ -10,5 +10,5 @@ import {BasicInput} from '../basic-input/basic-input';
   styleUrl: './basic-selector.css'
 })
 export class BasicSelector extends BasicInput{
-  itens = input<SelectorOption[]>();
+  itens = input<SelectorOption[]>([]);
 }

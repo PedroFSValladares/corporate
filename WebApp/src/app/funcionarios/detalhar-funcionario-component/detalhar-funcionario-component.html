@@ -16,7 +16,7 @@
       <app-basic-input inputName="email" label="Email:" inputValue="{{funcionario.email}}" [desabilitado]="true"></app-basic-input>
     </div>
     <div class="col">
-      <app-cargo-selector inputName="cargo" label="Cargo:" inputValue="{{funcionario.cargoId}}" [carregarTudo]="false" [desabilitado]="true"></app-cargo-selector>
+      <app-basic-selector inputName="cargo" label="Cargo:" [itens]="cargoOption" inputValue="{{cargoOption[0].value}}" [desabilitado]="true"></app-basic-selector>
     </div>
     <div class="col">
       <app-basic-input inputName="matricula" label="Matrícula:" inputValue="{{funcionario.matricula}}" [desabilitado]="true"></app-basic-input>
@@ -26,9 +26,16 @@
     <div class="col-2">
       <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}" [desabilitado]="true"></app-basic-input>
     </div>
+    <div class="col-2">
+      <app-basic-input inputName="ativo" label="Status:" inputValue="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}" [desabilitado]="true"></app-basic-input>
+    </div>
   </div>
-  <h6>Endereço:</h6>
-  <hr/>
+
+  <div class="mt-3 mb-3 ms-1 me-1">
+    <h6 class="ms-1">Endereço:</h6>
+    <hr class="m-1"/>
+  </div>
+
   <div class="row">
     <div class="col-2">
       <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco?.cep}}" [desabilitado]="true"></app-basic-input>
@@ -47,13 +54,37 @@
       <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}" [desabilitado]="true"></app-basic-input>
     </div>
     <div class="col">
-      <app-basic-selector inputName="UF" label="UF" [desabilitado]="true"></app-basic-selector>
+      <app-basic-selector inputName="UF" label="UF" [itens]="UF" [desabilitado]="true"></app-basic-selector>
     </div>
   </div>
-  <app-basic-input inputName="ativo" label="Status:" [desabilitado]="true"></app-basic-input>
 
-  <div ngbDropdown class="dropdown">
-    <a ngbDropdownToggle class="dropdown-toggle">Viagens</a>
+  <div class="mt-3 mb-3 ms-1 me-1">
+    <h6 class="ms-1">Viagens:</h6>
+    <hr class="m-1"/>
   </div>
 
+  <div class="row">
+    <div class="col">
+      <table class="table text-center ms-1 me-1">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Itinerário</th>
+            <th>Tárifa</th>
+            <th>Tipo da Viagem</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (viagem of funcionario.viagens; track viagem){
+            <tr>
+              <td>{{viagem.transporte.codigo}}</td>
+              <td class="text-start">{{viagem.transporte.itinerario}}</td>
+              <td>{{viagem.transporte.tarifa}}</td>
+              <td>{{viagem.tipoViagem}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
 </form>

@@ -8,6 +8,7 @@ export class FuncionarioCompleto{
   email : string = "";
   cargoId: number = 0;
   matricula : string = "";
+  ativo : boolean = false;
   endereco : Endereco = new Endereco();
   viagens: Viagem[] = []
 }
