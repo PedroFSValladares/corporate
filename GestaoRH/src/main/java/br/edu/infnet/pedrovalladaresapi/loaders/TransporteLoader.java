@@ -3,9 +3,11 @@ package br.edu.infnet.pedrovalladaresapi.loaders;
 import br.edu.infnet.pedrovalladaresapi.domain.models.transporte.Transporte;
 import br.edu.infnet.pedrovalladaresapi.services.TransporteService;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(4)
 public class TransporteLoader extends BaseLoader {
 
     private final TransporteService transporteService;

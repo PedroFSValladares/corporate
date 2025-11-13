@@ -63,12 +63,4 @@ public class FuncionariosService implements
         var funcionario = funcionarioRepository.findById(CPF);
         return funcionario.orElse(null);
     }
-
-    public Funcionario adicionarViagem(String cpf, List<Viagem> viagens){
-        var funcionario = obterPorId(cpf);
-        if(funcionario == null)
-            return null;
-        funcionario.setViagens(viagens);
-        return funcionarioRepository.save(funcionario);
-    }
 }
