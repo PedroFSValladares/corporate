@@ -1,1 +1,12 @@
-<p>alterar-funcionario-component works!</p>
+<form class="app-section pt-2 pb-2" action="alterar" method="PUT">
+  <h4 class="ms-2">Alterar Funcionário</h4>
+  <div class="container d-flex justify-content-end">
+    <a (click)="voltarPagina()" class="btn btn-primary">Voltar</a>
+  </div>
+  @if(funcionario){
+    <app-funcionario-layout [funcionario]="funcionario" [cargoOption]="cargoOption"></app-funcionario-layout>
+    <button class="btn btn-success" type="submit">Salvar</button>
+  } @else {
+    Carregando...
+  }
+</form>

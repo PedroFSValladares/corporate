@@ -10,6 +10,7 @@ import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {SelectorOption} from '../../model/SelectorOption';
 import {switchMap} from 'rxjs';
+import {FuncionarioLayout} from '../../form-layouts/funcionario-layout/funcionario-layout';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',
@@ -17,7 +18,8 @@ import {switchMap} from 'rxjs';
     BasicInput,
     BasicSelector,
     NgbDropdown,
-    NgbDropdownToggle
+    NgbDropdownToggle,
+    FuncionarioLayout
   ],
   templateUrl: './detalhar-funcionario-component.html',
   styleUrl: './detalhar-funcionario-component.css'
@@ -32,9 +34,8 @@ export class DetalharFuncionarioComponent implements OnInit {
     private location: Location) {
   }
 
-  funcionario : FuncionarioCompleto = new FuncionarioCompleto();
+  funcionario : FuncionarioCompleto|null = null;
   cargoOption : SelectorOption[] = []
-  UF : SelectorOption[] = []
 
   ngOnInit(): void {
     let funcionarioCpf = this.route.snapshot.paramMap.get('cpf')
@@ -44,10 +45,9 @@ export class DetalharFuncionarioComponent implements OnInit {
     this.obterFuncionario(funcionarioCpf);
   }
   obterFuncionario(funcionarioCpf:string){
-    let teste = this.funcionarioService.obterFuncionarioPorCpf(funcionarioCpf)
+    this.funcionarioService.obterFuncionarioPorCpf(funcionarioCpf)
       .pipe(switchMap(result => {
         this.funcionario = result.data;
-        this.UF.push(new SelectorOption("0", result.data.endereco.uf))
       return this.cargoService.obterCargoPorId(result.data.cargoId);
     })).subscribe({
       next: (result)=>{
@@ -58,14 +58,6 @@ export class DetalharFuncionarioComponent implements OnInit {
         console.error(error);
       }
     });
-  }
-
-  obterCargoFuncionario(cargoId:number){
-    this.cargoService.obterCargoPorId(cargoId).subscribe({
-      next: result => {
-        this.cargoOption.push(new SelectorOption(result.data.id.toString(), result.data.nome));
-      }
-    })
   }
 
   voltarPagina(){
