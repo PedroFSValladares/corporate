@@ -19,7 +19,7 @@ public class TransporteLoader extends BaseLoader {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         String[] campos;
-        var linhas = obterLinhasDeArquivo("Dados/Dados gestão RH - Transportes.tsv", true);
+        var linhas = obterLinhasDeArquivo("Dados/Transportes.tsv", true);
 
         for(String linha : linhas){
             campos = linha.split("\t");
