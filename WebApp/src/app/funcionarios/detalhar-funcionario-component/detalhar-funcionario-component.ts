@@ -7,6 +7,8 @@ import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {Location} from '@angular/common';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
+import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
+import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',
@@ -14,7 +16,9 @@ import {Division} from '../../layouts/division/division';
     BasicInput,
     BasicSelector,
     CargoSelector,
-    Division
+    Division,
+    EstadoSelector,
+    ToogleInput
   ],
   templateUrl: './detalhar-funcionario-component.html',
   styleUrl: './detalhar-funcionario-component.css'

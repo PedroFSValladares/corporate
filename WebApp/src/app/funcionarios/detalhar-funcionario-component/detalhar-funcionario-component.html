@@ -29,7 +29,7 @@
         <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}" [desabilitado]="true"></app-basic-input>
       </div>
       <div class="col-2">
-        <app-basic-input inputName="ativo" label="Status:" inputValue="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}" [desabilitado]="true"></app-basic-input>
+        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="funcionario.ativo" [desabilitado]="true"></app-toogle-input>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
         <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}" [desabilitado]="true"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-selector inputName="UF" label="UF" [itens]="[]" [desabilitado]="true"></app-basic-selector>
+        <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf" [desabilitado]="true"></app-estado-selector>
       </div>
     </div>
 

@@ -7,6 +7,8 @@ import {BasicInput} from '../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
+import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
+import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
 
 @Component({
   selector: 'app-alterar-funcionario-component',
@@ -14,7 +16,9 @@ import {Division} from '../../layouts/division/division';
     BasicInput,
     BasicSelector,
     CargoSelector,
-    Division
+    Division,
+    EstadoSelector,
+    ToogleInput
   ],
   templateUrl: './alterar-funcionario-component.html',
   styleUrl: './alterar-funcionario-component.css'

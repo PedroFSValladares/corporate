@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, input, OnInit} from '@angular/core';
 import {SelectorOption} from '../../model/SelectorOption';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {BasicSelector} from '../basic-selector/basic-selector';
+import {BasicInput} from '../basic-input/basic-input';
 
 @Component({
   selector: 'app-cargo-selector',
@@ -11,10 +12,11 @@ import {BasicSelector} from '../basic-selector/basic-selector';
   templateUrl: './cargo-selector.html',
   styleUrl: './cargo-selector.css'
 })
-export class CargoSelector extends BasicSelector implements OnInit {
+export class CargoSelector extends BasicInput<string> implements OnInit {
   cargos : SelectorOption[] = []
   carregarTudo = input<boolean>(true)
   cargoSelecionado = input<number>();
+  valorVazio = input<boolean>(true);
 
   constructor(private cargoService:CargoService, private cdr: ChangeDetectorRef) {
     super();

@@ -8,7 +8,7 @@ import {BasicInput} from '../basic-input/basic-input';
   templateUrl: './basic-selector.html',
   styleUrl: './basic-selector.css'
 })
-export class BasicSelector extends BasicInput{
+export class BasicSelector extends BasicInput<string>{
   itens = input<SelectorOption[]>([]);
   valorVazio = input<boolean>(true);
 }

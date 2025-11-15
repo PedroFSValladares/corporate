@@ -9,7 +9,7 @@
         <app-basic-input inputName="nome" label="Nome:" inputValue="{{funcionario.nome}}"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-input inputName="cpf" label="CPF:" inputValue="{{funcionario.cpf}}"></app-basic-input>
+        <app-basic-input inputName="cpf" label="CPF:" inputValue="{{funcionario.cpf}}" [desabilitado]="true"></app-basic-input>
       </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
         <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}"></app-basic-input>
       </div>
       <div class="col-2">
-        <app-basic-input inputName="ativo" label="Status:" inputValue="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}"></app-basic-input>
+        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="funcionario.ativo"></app-toogle-input>
       </div>
     </div>
 
@@ -52,7 +52,7 @@
         <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-selector inputName="UF" label="UF" [itens]="[]"></app-basic-selector>
+        <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf"></app-estado-selector>
       </div>
     </div>
 

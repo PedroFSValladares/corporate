@@ -9,13 +9,13 @@ import {ReactiveFormsModule} from '@angular/forms';
   templateUrl: './basic-input.html',
   styleUrl: './basic-input.css'
 })
-export class BasicInput{
+export class BasicInput<T>{
   inputName = input<string>();
   inputId = input<string>();
   label = input<string>("Label");
   type = input<string>("text");
   desabilitado = input<boolean>(false);
-  inputValue = input<string>();
+  inputValue = input<T>();
 
   constructor() {
 

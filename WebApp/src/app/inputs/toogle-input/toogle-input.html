@@ -1,1 +1,18 @@
-<p>toogle-input works!</p>
+<div class="m-2">
+  <label for="{{inputName()}}" class="form-label">{{label()}}</label>
+  <button
+    class="form-control toogle-input"
+    (click)="toogle($event)"
+    [ngStyle]="{
+      'background-color': booleanValue ? trueColor : falseColor,
+      'cursor': !desabilitado() ? 'pointer' : 'default'
+      }"
+  >
+      @if (booleanValue){
+        Ativo
+      } @else {
+        Inativo
+      }
+  </button>
+  <input type="hidden" name="{{inputName()}}" id="{{inputId()}}" value="{{booleanValue}}" class="form-control" [disabled]="desabilitado()" />
+</div>
