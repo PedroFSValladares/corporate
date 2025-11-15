@@ -1,13 +1,20 @@
-import {ChangeDetectorRef, Component, ElementRef, input, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import {FuncionarioResumido} from '../../model/FuncionarioResumido';
 import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
 import {RouterLink} from '@angular/router';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
-import {CargoService} from '../../services/cargo-service/cargo-service';
 import {SelectorOption} from '../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
 import {TableActions} from '../../layouts/table-actions/table-actions';
+import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 
 @Component({
   selector: 'app-listar-funcionario-component',
@@ -20,14 +27,14 @@ import {TableActions} from '../../layouts/table-actions/table-actions';
     NgbDropdownMenu,
     NgbDropdownItem,
     TableActions,
+    CargoSelector,
   ],
   templateUrl: './listar-funcionario-component.html',
   styleUrl: './listar-funcionario-component.css'
 })
-export class ListarFuncionarioComponent implements OnInit {
+export class ListarFuncionarioComponent{
   constructor(
     private funcionarioService: FuncionarioService,
-    private cargoService: CargoService,
     private cdr: ChangeDetectorRef) {
   }
 
@@ -35,9 +42,11 @@ export class ListarFuncionarioComponent implements OnInit {
   formInputs: QueryList<ElementRef> = new QueryList<ElementRef>();
   @ViewChildren(BasicSelector, {read:  ElementRef})
   formSelectors: QueryList<ElementRef> = new QueryList<ElementRef>();
+  @ViewChild(CargoSelector, {read:  ElementRef})
+  cargoSelector: ElementRef|undefined;
+
 
   funcionarios : FuncionarioResumido[] = [];
-  cargos : SelectorOption[] = []
   status: SelectorOption[] = [
     new SelectorOption("true", "Ativo"),
     new SelectorOption("false", "Inativo")
@@ -67,24 +76,12 @@ export class ListarFuncionarioComponent implements OnInit {
     this.qntdPaginas = [];
     this.formInputs.forEach(input => {input.nativeElement.querySelector('input').value = ''});
     this.formSelectors.forEach(input => {input.nativeElement.querySelector('select').value = ''});
+    if(this.cargoSelector)
+      this.cargoSelector.nativeElement.querySelector('select').value = ''
     this.paginationEnabled = false;
     this.pageOffset = 1;
     this.numeroPaginaAtual = 1;
     this.qntdResgistrosAMostrar = 10;
-  }
-
-  carregarCargos(): void{
-      this.cargoService.obterCargos().subscribe({
-        next: (result) => {
-          this.cargos = result.data.map(item => {
-            return new SelectorOption(item.id.toString(), item.nome)
-          })
-          this.cdr.detectChanges();
-        },
-        error: (error) => {
-          console.error(error);
-        }
-      })
   }
 
   paginar(pagina : number): void {
@@ -107,9 +104,5 @@ export class ListarFuncionarioComponent implements OnInit {
     if(this.funcionarios.length % 10 > 0){
       this.qntdPaginas.push(Math.trunc(this.funcionarios.length / this.qntdResgistrosAMostrar) + 1);
     }
-  }
-
-  ngOnInit(): void {
-    this.carregarCargos();
   }
 }
