@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component} from '@angular/core';
-import {FuncionarioLayout} from '../../form-layouts/funcionario-layout/funcionario-layout';
 import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {ActivatedRoute} from '@angular/router';
@@ -7,11 +6,18 @@ import {Location} from '@angular/common';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {SelectorOption} from '../../model/SelectorOption';
 import {switchMap} from 'rxjs';
+import {BasicInput} from '../../inputs/basic-input/basic-input';
+import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
+import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
+import {Division} from '../../division/division';
 
 @Component({
   selector: 'app-alterar-funcionario-component',
   imports: [
-    FuncionarioLayout
+    BasicInput,
+    BasicSelector,
+    CargoSelector,
+    Division
   ],
   templateUrl: './alterar-funcionario-component.html',
   styleUrl: './alterar-funcionario-component.css'
@@ -25,7 +31,6 @@ export class AlterarFuncionarioComponent {
   }
 
   funcionario : FuncionarioCompleto|null = null;
-  cargoOption : SelectorOption[] = []
 
   ngOnInit(): void {
     let funcionarioCpf = this.route.snapshot.paramMap.get('cpf')
@@ -35,19 +40,15 @@ export class AlterarFuncionarioComponent {
     this.obterFuncionario(funcionarioCpf);
   }
   obterFuncionario(funcionarioCpf:string){
-    this.funcionarioService.obterFuncionarioPorCpf(funcionarioCpf)
-      .pipe(switchMap(result => {
-        this.funcionario = result.data;
-        return this.cargoService.obterCargoPorId(result.data.cargoId);
-      })).subscribe({
-      next: (result)=>{
-        this.cargoOption.push(new SelectorOption(result.data.id.toString(), result.data.nome))
-        this.cdr.detectChanges();
+    this.funcionarioService.obterFuncionarioPorCpf(funcionarioCpf).subscribe({
+      next: result => {
+        this.funcionario = result.data
+        this.cdr.detectChanges()
       },
-      error: (error)=>{
+      error: error => {
         console.error(error);
       }
-    });
+    })
   }
 
   voltarPagina(){

@@ -7,6 +7,7 @@ import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {SelectorOption} from '../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
+import {TableActions} from '../../layouts/table-actions/table-actions';
 
 @Component({
   selector: 'app-listar-funcionario-component',
@@ -18,6 +19,7 @@ import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '
     NgbDropdownToggle,
     NgbDropdownMenu,
     NgbDropdownItem,
+    TableActions,
   ],
   templateUrl: './listar-funcionario-component.html',
   styleUrl: './listar-funcionario-component.css'

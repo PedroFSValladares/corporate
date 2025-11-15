@@ -11,4 +11,5 @@ import {BasicInput} from '../basic-input/basic-input';
 })
 export class BasicSelector extends BasicInput{
   itens = input<SelectorOption[]>([]);
+  valorVazio = input<boolean>(true);
 }

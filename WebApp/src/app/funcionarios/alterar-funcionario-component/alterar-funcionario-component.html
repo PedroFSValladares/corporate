@@ -4,7 +4,84 @@
     <a (click)="voltarPagina()" class="btn btn-primary">Voltar</a>
   </div>
   @if(funcionario){
-    <app-funcionario-layout [funcionario]="funcionario" [cargoOption]="cargoOption"></app-funcionario-layout>
+    <div class="row">
+      <div class="col-9">
+        <app-basic-input inputName="nome" label="Nome:" inputValue="{{funcionario.nome}}"></app-basic-input>
+      </div>
+      <div class="col">
+        <app-basic-input inputName="cpf" label="CPF:" inputValue="{{funcionario.cpf}}"></app-basic-input>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col-5">
+        <app-basic-input inputName="email" label="Email:" inputValue="{{funcionario.email}}"></app-basic-input>
+      </div>
+      <div class="col">
+        <app-cargo-selector [inputName]="'cargo'" [label]="'Cargo:'" [carregarTudo]="true" [valorVazio]="false" [inputValue]="funcionario.cargoId.toString()"></app-cargo-selector>
+      </div>
+      <div class="col">
+        <app-basic-input inputName="matricula" label="Matrícula:" inputValue="{{funcionario.matricula}}" [desabilitado]="true"></app-basic-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}"></app-basic-input>
+      </div>
+      <div class="col-2">
+        <app-basic-input inputName="ativo" label="Status:" inputValue="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}"></app-basic-input>
+      </div>
+    </div>
+
+    <app-division titulo="Endereço"></app-division>
+
+    <div class="row">
+      <div class="col-2">
+        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco?.cep}}"></app-basic-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco?.logradouro}}"></app-basic-input>
+      </div>
+      <div class="col">
+        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco?.bairro}}"></app-basic-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}"></app-basic-input>
+      </div>
+      <div class="col">
+        <app-basic-selector inputName="UF" label="UF" [itens]="[]"></app-basic-selector>
+      </div>
+    </div>
+
+    <app-division titulo="Viagens:"></app-division>
+
+    <div class="row">
+      <div class="col">
+        <table class="table text-center ms-1 me-1">
+          <thead>
+          <tr>
+            <th>Código</th>
+            <th>Itinerário</th>
+            <th>Tárifa</th>
+            <th>Tipo da Viagem</th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (viagem of funcionario.viagens; track viagem){
+              <tr>
+                <td>{{viagem.transporte.codigo}}</td>
+                <td class="text-start">{{viagem.transporte.itinerario}}</td>
+                <td>{{viagem.transporte.tarifa}}</td>
+                <td>{{viagem.tipoViagem}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
     <button class="btn btn-success" type="submit">Salvar</button>
   } @else {
     Carregando...

@@ -1,7 +1,11 @@
 <div class="mb-1 app-section">
   <form class="container-fluid">
-  <h4 class="pt-3 ps-2">Funcionários</h4>
-    <button class="btn btn-success">Incluir</button>
+    <h4 class="pt-3 ps-2">Funcionários</h4>
+    <div class="row">
+      <div class="col">
+        <a [routerLink]="['./incluir/']" class="btn btn-success float-end">Incluir</a>
+      </div>
+    </div>
     <div class="row">
       <div class="col">
           <app-basic-input type="text" label="Nome:" inputName="nome"></app-basic-input>
@@ -63,15 +67,7 @@
             {{funcionario.status ? "Ativo" : "Inativo"}}
           </td>
           <td>
-            <a class="btn btn-secondary" [routerLink]="['./detalhar/', funcionario.cpf]">
-             <img src="icons/detalhar_24px.png">
-            </a>
-            <a class="btn btn-primary" [routerLink]="['./alterar/', funcionario.cpf]">
-              <img src="icons/editar_24px.png">
-            </a>
-            <a class="btn btn-danger" [routerLink]="['./inativar/', funcionario.cpf]">
-              <img src="icons/inativar_24px.png">
-            </a>
+            <app-table-actions entityId="{{funcionario.cpf}}"></app-table-actions>
           </td>
         </tr>
       } @empty {

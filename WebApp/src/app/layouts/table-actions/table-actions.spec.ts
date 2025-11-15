@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FuncionarioLayout } from './funcionario-layout';
+import { TableActions } from './table-actions';
 
-describe('FuncionarioLayout', () => {
-  let component: FuncionarioLayout;
-  let fixture: ComponentFixture<FuncionarioLayout>;
+describe('TableActions', () => {
+  let component: TableActions;
+  let fixture: ComponentFixture<TableActions>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FuncionarioLayout]
+      imports: [TableActions]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FuncionarioLayout);
+    fixture = TestBed.createComponent(TableActions);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
