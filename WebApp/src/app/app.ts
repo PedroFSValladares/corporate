@@ -4,7 +4,7 @@ import {SideMenuComponent} from './layouts/side-menu-component/side-menu-compone
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, SideMenuComponent],
+  imports: [RouterOutlet, SideMenuComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
