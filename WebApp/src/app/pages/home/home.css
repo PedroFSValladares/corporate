@@ -1,0 +1,10 @@
+.card{
+  max-width: 300px;
+  min-height: 100px;
+}
+img{
+  object-fit: none;
+}
+a{
+  text-decoration: none;
+}
