@@ -17,8 +17,6 @@ export class FuncionarioService {
   }
 
   obterFuncionarioPorCpf(cpf : string) : Observable<ApiResponse<FuncionarioCompleto>>{
-    let funcionario:FuncionarioCompleto = new FuncionarioCompleto();
-
     return this.httpClient.get<ApiResponse<FuncionarioCompleto>>(`${environment.apiUrl}/funcionarios/${cpf}`)
   }
 }

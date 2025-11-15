@@ -1,11 +1,8 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
-import {CargoService} from '../../services/cargo-service/cargo-service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
-import {SelectorOption} from '../../model/SelectorOption';
-import {switchMap} from 'rxjs';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
@@ -22,9 +19,8 @@ import {Division} from '../../layouts/division/division';
   templateUrl: './alterar-funcionario-component.html',
   styleUrl: './alterar-funcionario-component.css'
 })
-export class AlterarFuncionarioComponent {
+export class AlterarFuncionarioComponent implements OnInit {
   constructor(private funcionarioService: FuncionarioService,
-              private cargoService: CargoService,
               private route: ActivatedRoute,
               private cdr : ChangeDetectorRef,
               private location: Location) {

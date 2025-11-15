@@ -6,9 +6,6 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {Location} from '@angular/common';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
-import {CargoService} from '../../services/cargo-service/cargo-service';
-import {SelectorOption} from '../../model/SelectorOption';
-import {switchMap} from 'rxjs';
 import {Division} from '../../layouts/division/division';
 
 @Component({
@@ -26,7 +23,6 @@ export class DetalharFuncionarioComponent implements OnInit {
 
   constructor(
     private funcionarioService: FuncionarioService,
-    private cargoService: CargoService,
     private route: ActivatedRoute,
     private cdr : ChangeDetectorRef,
     private location: Location) {

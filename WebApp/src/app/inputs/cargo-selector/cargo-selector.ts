@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component, input, OnInit} from '@angular/core';
-import {BasicInput} from '../basic-input/basic-input';
 import {SelectorOption} from '../../model/SelectorOption';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {BasicSelector} from '../basic-selector/basic-selector';
