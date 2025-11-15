@@ -9,7 +9,7 @@ import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {SelectorOption} from '../../model/SelectorOption';
 import {switchMap} from 'rxjs';
-import {Division} from '../../division/division';
+import {Division} from '../../layouts/division/division';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',

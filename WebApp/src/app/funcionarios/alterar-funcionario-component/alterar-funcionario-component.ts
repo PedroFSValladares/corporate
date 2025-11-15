@@ -9,7 +9,7 @@ import {switchMap} from 'rxjs';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
-import {Division} from '../../division/division';
+import {Division} from '../../layouts/division/division';
 
 @Component({
   selector: 'app-alterar-funcionario-component',

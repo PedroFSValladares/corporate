@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import {SideMenuComponent} from './side-menu-component/side-menu-component';
+import {SideMenuComponent} from './layouts/side-menu-component/side-menu-component';
 
 @Component({
   selector: 'app-root',
