@@ -36,20 +36,20 @@
 
     <div class="row">
       <div class="col-2">
-        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco?.cep}}"></app-basic-input>
+        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco.cep}}"></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco?.logradouro}}"></app-basic-input>
+        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco.logradouro}}"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco?.bairro}}"></app-basic-input>
+        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco.bairro}}"></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col-10">
-        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}"></app-basic-input>
+        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco.complemento}}"></app-basic-input>
       </div>
       <div class="col">
         <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf"></app-estado-selector>

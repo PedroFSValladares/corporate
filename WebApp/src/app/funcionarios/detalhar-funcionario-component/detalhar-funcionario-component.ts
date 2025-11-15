@@ -1,8 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
-import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {Location} from '@angular/common';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
@@ -14,7 +13,6 @@ import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
   selector: 'app-detalhar-funcionario-component',
   imports: [
     BasicInput,
-    BasicSelector,
     CargoSelector,
     Division,
     EstadoSelector,

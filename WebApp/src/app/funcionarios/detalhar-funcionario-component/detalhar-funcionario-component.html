@@ -37,20 +37,20 @@
 
     <div class="row">
       <div class="col-2">
-        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco?.cep}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco.cep}}" [desabilitado]="true"></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco?.logradouro}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco.logradouro}}" [desabilitado]="true"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco?.bairro}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco.bairro}}" [desabilitado]="true"></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col-10">
-        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco?.complemento}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco.complemento}}" [desabilitado]="true"></app-basic-input>
       </div>
       <div class="col">
         <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf" [desabilitado]="true"></app-estado-selector>

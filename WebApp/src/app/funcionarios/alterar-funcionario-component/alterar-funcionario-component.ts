@@ -4,7 +4,6 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {BasicInput} from '../../inputs/basic-input/basic-input';
-import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
 import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
@@ -14,7 +13,6 @@ import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
   selector: 'app-alterar-funcionario-component',
   imports: [
     BasicInput,
-    BasicSelector,
     CargoSelector,
     Division,
     EstadoSelector,
