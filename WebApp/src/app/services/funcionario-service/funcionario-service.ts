@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FuncionarioResumido} from '../../model/FuncionarioResumido';
-import {environment} from '../../environment';
+import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {ApiResponse} from '../../model/ApiResponse';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';

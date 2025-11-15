@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {ApiResponse} from '../../model/ApiResponse';
 import {HttpClient} from '@angular/common/http';
 import {CargoResumido} from '../../model/CargoResumido';
-import {environment} from '../../environment';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

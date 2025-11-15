@@ -1,0 +1,10 @@
+services:
+  app-front:
+    build:
+      context: ./WebApp
+      dockerfile: dockerfile-dev
+    ports:
+    - "4200:4200"
+    volumes:
+    - ./WebApp/:/app
+    - /app/node_modules
