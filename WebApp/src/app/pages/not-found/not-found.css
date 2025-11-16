@@ -1,0 +1,9 @@
+.not-found-code{
+  font-size: 192px;
+  font-weight: bold;
+  color: #d8d8d8;
+}
+div.app-section{
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
