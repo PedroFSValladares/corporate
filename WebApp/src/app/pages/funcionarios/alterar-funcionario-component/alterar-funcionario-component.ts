@@ -1,19 +1,19 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
+import {FuncionarioService} from '../../../services/funcionario-service/funcionario-service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
-import {BasicInput} from '../../inputs/basic-input/basic-input';
-import {Division} from '../../layouts/division/division';
-import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
-import {ListSelector} from '../../inputs/list-selector/list-selector';
-import {InputLabel} from '../../directives/input-label';
-import {InputId} from '../../directives/input-id';
-import {InputName} from '../../directives/input-name';
-import {SelectName} from '../../directives/select-name';
-import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
-import {SelectorOption} from '../../model/SelectorOption';
-import {CargoService} from '../../services/cargo-service/cargo-service';
+import {FuncionarioCompleto} from '../../../model/FuncionarioCompleto';
+import {BasicInput} from '../../../inputs/basic-input/basic-input';
+import {Division} from '../../../layouts/division/division';
+import {ToogleInput} from '../../../inputs/toogle-input/toogle-input';
+import {ListSelector} from '../../../inputs/list-selector/list-selector';
+import {InputLabel} from '../../../directives/input-label';
+import {InputId} from '../../../directives/input-id';
+import {InputName} from '../../../directives/input-name';
+import {SelectName} from '../../../directives/select-name';
+import {BasicSelector} from '../../../inputs/basic-selector/basic-selector';
+import {SelectorOption} from '../../../model/SelectorOption';
+import {CargoService} from '../../../services/cargo-service/cargo-service';
 import {FuncionariosPage} from '../FuncionariosPage';
 
 @Component({

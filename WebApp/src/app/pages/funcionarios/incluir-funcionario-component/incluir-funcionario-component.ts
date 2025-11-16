@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
-import {SelectorOption} from '../../model/SelectorOption';
-import {CargoService} from '../../services/cargo-service/cargo-service';
+import {SelectorOption} from '../../../model/SelectorOption';
+import {CargoService} from '../../../services/cargo-service/cargo-service';
 
 @Component({
   selector: 'app-incluir-funcionario-component',

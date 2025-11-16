@@ -1,7 +1,7 @@
-import {FuncionarioCompleto} from '../model/FuncionarioCompleto';
-import {SelectorOption} from '../model/SelectorOption';
-import {FuncionarioService} from '../services/funcionario-service/funcionario-service';
-import {CargoService} from '../services/cargo-service/cargo-service';
+import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
+import {SelectorOption} from '../../model/SelectorOption';
+import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
+import {CargoService} from '../../services/cargo-service/cargo-service';
 import {ChangeDetectorRef} from '@angular/core';
 
 

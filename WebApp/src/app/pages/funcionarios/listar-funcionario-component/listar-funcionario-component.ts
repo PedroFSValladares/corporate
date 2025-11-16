@@ -6,17 +6,17 @@ import {
   ViewChild,
   ViewChildren
 } from '@angular/core';
-import {FuncionarioResumido} from '../../model/FuncionarioResumido';
-import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
+import {FuncionarioResumido} from '../../../model/FuncionarioResumido';
+import {FuncionarioService} from '../../../services/funcionario-service/funcionario-service';
 import {RouterLink} from '@angular/router';
-import {BasicInput} from '../../inputs/basic-input/basic-input';
-import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
-import {SelectorOption} from '../../model/SelectorOption';
+import {BasicInput} from '../../../inputs/basic-input/basic-input';
+import {BasicSelector} from '../../../inputs/basic-selector/basic-selector';
+import {SelectorOption} from '../../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
-import {TableActions} from '../../layouts/table-actions/table-actions';
-import {InputLabel} from '../../directives/input-label';
+import {TableActions} from '../../../layouts/table-actions/table-actions';
+import {InputLabel} from '../../../directives/input-label';
 import {FuncionariosPage} from '../FuncionariosPage';
-import {CargoService} from '../../services/cargo-service/cargo-service';
+import {CargoService} from '../../../services/cargo-service/cargo-service';
 
 @Component({
   selector: 'app-listar-funcionario-component',
