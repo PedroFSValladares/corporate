@@ -60,26 +60,7 @@
 
     <div class="row">
       <div class="col">
-        <table class="table text-center ms-1 me-1">
-          <thead>
-          <tr>
-            <th>Código</th>
-            <th>Itinerário</th>
-            <th>Tárifa</th>
-            <th>Tipo da Viagem</th>
-          </tr>
-          </thead>
-          <tbody>
-            @for (viagem of funcionario.viagens; track viagem){
-              <tr>
-                <td>{{viagem.transporte.codigo}}</td>
-                <td class="text-start">{{viagem.transporte.itinerario}}</td>
-                <td>{{viagem.transporte.tarifa}}</td>
-                <td>{{viagem.tipoViagem}}</td>
-              </tr>
-            }
-          </tbody>
-        </table>
+        <app-list-selector [label]="'Transportes:'"></app-list-selector>
       </div>
     </div>
     <button class="btn btn-success" type="submit">Salvar</button>

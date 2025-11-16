@@ -1,0 +1,22 @@
+<div class="m-2">
+  <div class="row">
+    <label class="form-label">{{label()}}</label>
+    <div class="col">
+      <select class="form-control">
+        <option></option>
+      </select>
+    </div>
+    <div class="col mb-2">
+      <button (click)="addItem($event)" class="btn btn-success">
+        <img src="icons/adicionar_24px.png">
+      </button>
+    </div>
+  </div>
+  <ul class="selection-area rounded">
+    @if (itensSelecionados != undefined) {
+      @for (item of itensSelecionados; track item){
+        <li>{{item.toString()}}</li>
+      }
+    }
+  </ul>
+</div>

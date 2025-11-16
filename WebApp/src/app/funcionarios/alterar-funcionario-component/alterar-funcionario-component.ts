@@ -8,6 +8,7 @@ import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
 import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
 import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
+import {ListSelector} from '../../inputs/list-selector/list-selector';
 
 @Component({
   selector: 'app-alterar-funcionario-component',
@@ -16,7 +17,8 @@ import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
     CargoSelector,
     Division,
     EstadoSelector,
-    ToogleInput
+    ToogleInput,
+    ListSelector
   ],
   templateUrl: './alterar-funcionario-component.html',
   styleUrl: './alterar-funcionario-component.css'
