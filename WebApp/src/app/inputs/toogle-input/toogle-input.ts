@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, input, OnInit, output} from '@angular/core';
 import {BasicInput} from '../basic-input/basic-input';
 import {NgStyle} from '@angular/common';
 
@@ -10,8 +10,15 @@ import {NgStyle} from '@angular/common';
   templateUrl: './toogle-input.html',
   styleUrl: './toogle-input.css'
 })
-export class ToogleInput extends BasicInput implements OnInit {
-  override ngOnInit(): void {
+export class ToogleInput implements OnInit {
+  booleanValue : boolean = false;
+  trueColor : string = 'darkseagreen';
+  falseColor : string = 'indianred';
+  desabilitado = input<boolean>(false);
+  inputValue = input<boolean>(true);
+  inputValueChange = output<boolean>();
+
+  ngOnInit(): void {
     if(this.inputValue != undefined){
       this.booleanValue = true;
     }else{
@@ -21,13 +28,12 @@ export class ToogleInput extends BasicInput implements OnInit {
       })
     }
   }
-  booleanValue : boolean = false;
-  trueColor : string = 'darkseagreen';
-  falseColor : string = 'indianred';
   toogle(event: Event) {
     event.preventDefault();
-    if(!this.desabilitado())
+    if(!this.desabilitado()){
       this.booleanValue = !this.booleanValue;
+      this.inputValueChange.emit(this.booleanValue);
+    }
   }
 
 

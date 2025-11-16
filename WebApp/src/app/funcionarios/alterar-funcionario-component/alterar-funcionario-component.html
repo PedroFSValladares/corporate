@@ -59,7 +59,11 @@
         ></app-basic-input>
       </div>
       <div class="col-2">
-        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="'true'"></app-toogle-input>
+        <app-toogle-input
+          inputName="ativo"
+          [appInputLabel]="'Status:'"
+          [(inputValue)]="funcionario.ativo"
+        ></app-toogle-input>
       </div>
     </div>
 
