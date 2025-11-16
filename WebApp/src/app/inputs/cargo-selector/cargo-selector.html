@@ -1,1 +1,7 @@
-<app-basic-selector [itens]="cargos" [label]="label()" [desabilitado]="desabilitado()" [valorVazio]="valorVazio()" [inputValue]="inputValue()"></app-basic-selector>
+<app-basic-selector
+  [appInputLabel]="'Cargo'"
+  [appSelectName]="'cargo'"
+  [appSelectId]="'cargo'"
+  [itens]="cargos"
+  [(inputValue)]="idCargoSelecionado"
+></app-basic-selector>

@@ -8,6 +8,11 @@ import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
 import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
 import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
+import {ListSelector} from '../../inputs/list-selector/list-selector';
+import {InputName} from '../../directives/input-name';
+import {InputLabel} from '../../directives/input-label';
+import {InputId} from '../../directives/input-id';
+import {SelectName} from '../../directives/select-name';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',
@@ -16,7 +21,12 @@ import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
     CargoSelector,
     Division,
     EstadoSelector,
-    ToogleInput
+    ToogleInput,
+    ListSelector,
+    InputName,
+    InputLabel,
+    InputId,
+    SelectName
   ],
   templateUrl: './detalhar-funcionario-component.html',
   styleUrl: './detalhar-funcionario-component.css'

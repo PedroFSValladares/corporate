@@ -12,7 +12,7 @@ import {SelectorOption} from '../../model/SelectorOption';
   templateUrl: './estado-selector.html',
   styleUrl: './estado-selector.css'
 })
-export class EstadoSelector extends BasicInput<string>{
+export class EstadoSelector extends BasicInput{
   estados : string[] = [
     'AC',
     'AL',

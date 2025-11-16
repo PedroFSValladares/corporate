@@ -1,5 +1,5 @@
 <div class="m-2">
-  <label for="{{inputName()}}" class="form-label">{{label()}}</label>
+  <label class="form-label"></label>
   <button
     class="form-control toogle-input"
     (click)="toogle($event)"
@@ -14,5 +14,5 @@
         Inativo
       }
   </button>
-  <input type="hidden" name="{{inputName()}}" id="{{inputId()}}" value="{{booleanValue}}" class="form-control" [disabled]="desabilitado()" />
+  <input type="hidden" value="{{booleanValue}}" class="form-control" [disabled]="desabilitado()" />
 </div>

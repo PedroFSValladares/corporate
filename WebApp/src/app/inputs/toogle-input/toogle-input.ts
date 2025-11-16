@@ -10,10 +10,10 @@ import {NgStyle} from '@angular/common';
   templateUrl: './toogle-input.html',
   styleUrl: './toogle-input.css'
 })
-export class ToogleInput extends BasicInput<boolean> implements OnInit {
-  ngOnInit(): void {
+export class ToogleInput extends BasicInput implements OnInit {
+  override ngOnInit(): void {
     if(this.inputValue != undefined){
-      this.booleanValue = this.inputValue()!;
+      this.booleanValue = true;
     }else{
       console.error({
         'object': this,

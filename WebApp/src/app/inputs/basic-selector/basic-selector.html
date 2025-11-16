@@ -1,10 +1,15 @@
 <div class="m-2">
-  <label for={{inputName()}} class="form-label">{{label()}}</label>
-    <select name={{inputName()}} id={{inputId()}} class="form-control" selectedIndex="{{inputValue()}}" [disabled]="desabilitado()">
+  <label class="form-label"></label>
+    <select
+      (change)="onValueChange()"
+      class="form-control"
+      [disabled]="desabilitado()"
+      [formControl]="input"
+    >
       @if(valorVazio()){
         <option value=""></option>
       }
-      @for (item of itens(); track item.value){
+      @for (item of itens(); track item){
         <option value="{{item.value}}" [selected]="inputValue() == item.value">{{item.name}}</option>
       }
     </select>

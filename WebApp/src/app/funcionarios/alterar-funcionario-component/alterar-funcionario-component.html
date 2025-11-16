@@ -1,4 +1,4 @@
-<form class="app-section pt-2 pb-2" action="alterar" method="PUT">
+<form class="app-section pt-2 pb-2">
   <h4 class="ms-2">Alterar Funcionário</h4>
   <div class="container d-flex justify-content-end">
     <a (click)="voltarPagina()" class="btn btn-primary">Voltar</a>
@@ -6,29 +6,60 @@
   @if(funcionario){
     <div class="row">
       <div class="col-9">
-        <app-basic-input inputName="nome" label="Nome:" inputValue="{{funcionario.nome}}"></app-basic-input>
+        <app-basic-input
+          [appInputLabel]="'Nome:'"
+          [appInputId]="'nome'"
+          [appInputName]="'nome'"
+          [(inputValue)]="funcionario.nome"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-input inputName="cpf" label="CPF:" inputValue="{{funcionario.cpf}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input
+          [appInputLabel]="'CPF:'"
+          [appInputId]="'cpf'"
+          [appInputName]="'cpf'"
+          [(inputValue)]="funcionario.cpf"
+          [desabilitado]="true"
+        ></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div  class="col-5">
-        <app-basic-input inputName="email" label="Email:" inputValue="{{funcionario.email}}"></app-basic-input>
+        <app-basic-input
+          [appInputLabel]="'E-mail:'"
+          [appInputId]="'email'"
+          [appInputName]="'email'"
+          [(inputValue)]="funcionario.email"
+        ></app-basic-input>
       </div>
       <div class="col">
-        <app-cargo-selector [inputName]="'cargo'" [label]="'Cargo:'" [carregarTudo]="true" [valorVazio]="false" [inputValue]="funcionario.cargoId.toString()"></app-cargo-selector>
+        <app-basic-selector
+          [appSelectName]="'cargo'"
+          [appInputLabel]="'Cargo:'"
+          [itens]="cargos"
+          [(inputValue)]="funcionario.cargoId"
+        ></app-basic-selector>
       </div>
       <div class="col">
-        <app-basic-input inputName="matricula" label="Matrícula:" inputValue="{{funcionario.matricula}}" [desabilitado]="true"></app-basic-input>
+        <app-basic-input
+          [appInputLabel]="'Matrícula:'"
+          [appInputId]="'matricula'"
+          [appInputName]="'matricula'"
+          [(inputValue)]="funcionario.matricula"
+          [desabilitado]="true"
+        ></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col-2">
-        <app-basic-input inputName="telefone" label="Telefone:" inputValue="{{funcionario.telefone}}"></app-basic-input>
+        <app-basic-input
+          [appInputLabel]="'Telefone:'"
+          [appInputId]="'telefone'"
+          [appInputName]="'telefone'"
+          [(inputValue)]="funcionario.telefone"
+        ></app-basic-input>
       </div>
       <div class="col-2">
-        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="funcionario.ativo"></app-toogle-input>
+        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="'true'"></app-toogle-input>
       </div>
     </div>
 
@@ -36,20 +67,40 @@
 
     <div class="row">
       <div class="col-2">
-        <app-basic-input inputName="cep" label="CEP:" inputValue="{{funcionario.endereco.cep}}"></app-basic-input>
+        <app-basic-input
+          [appInputName]="'cep'"
+          [appInputLabel]="'CEP:'"
+          [appInputId]="'cep'"
+          [(inputValue)]="funcionario.endereco.cep"
+        ></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <app-basic-input inputName="logradouro" label="Logradouro:" inputValue="{{funcionario.endereco.logradouro}}"></app-basic-input>
+        <app-basic-input
+          [appInputName]="'logradouro'"
+          [appInputLabel]="'Logradouro:'"
+          [appInputId]="'logradouro'"
+          [(inputValue)]="funcionario.endereco.logradouro"
+        ></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-input inputName="bairro" label="Bairro:" inputValue="{{funcionario.endereco.bairro}}"></app-basic-input>
+        <app-basic-input
+          [appInputName]="'bairro'"
+          [appInputLabel]="'Bairro:'"
+          [appInputId]="'bairro'"
+          [(inputValue)]="funcionario.endereco.bairro"
+        ></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col-10">
-        <app-basic-input inputName="complemento" label="Complemento:" inputValue="{{funcionario.endereco.complemento}}"></app-basic-input>
+        <app-basic-input
+          [appInputName]="'complemento'"
+          [appInputLabel]="'Complemento:'"
+          [appInputId]="'complemento'"
+          [(inputValue)]="funcionario.endereco.complemento"
+        ></app-basic-input>
       </div>
       <div class="col">
         <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf"></app-estado-selector>
@@ -60,7 +111,7 @@
 
     <div class="row">
       <div class="col">
-        <app-list-selector [label]="'Transportes:'"></app-list-selector>
+        <app-list-selector [appInputLabel]="'Transportes:'"></app-list-selector>
       </div>
     </div>
     <button class="btn btn-success" type="submit">Salvar</button>

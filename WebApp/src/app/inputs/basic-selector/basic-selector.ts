@@ -1,14 +1,32 @@
-import {Component, input} from '@angular/core';
+import {ChangeDetectorRef, Component, input, OnInit, output} from '@angular/core';
 import {SelectorOption} from '../../model/SelectorOption';
 import {BasicInput} from '../basic-input/basic-input';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-basic-selector',
-  imports: [],
+  imports: [
+    ReactiveFormsModule
+  ],
   templateUrl: './basic-selector.html',
   styleUrl: './basic-selector.css'
 })
-export class BasicSelector extends BasicInput<string>{
+export class BasicSelector implements OnInit {
   itens = input<SelectorOption[]>([]);
   valorVazio = input<boolean>(true);
+  desabilitado = input<boolean>(false);
+  inputValue = input<string>('');
+  inputValueChange = output<string>()
+  input = new FormControl();
+
+  constructor(private cdr: ChangeDetectorRef) {
+  }
+
+  ngOnInit(): void {
+    this.input.setValue(this.inputValue());
+  }
+
+  onValueChange(){
+    this.inputValueChange.emit(this.input.value)
+  }
 }

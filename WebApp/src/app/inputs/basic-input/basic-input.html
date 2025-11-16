@@ -1,5 +1,10 @@
 <div class="m-2">
-  <label for="{{inputName()}}" class="form-label">{{label()}}</label>
-  <input type="{{type()}}" name="{{inputName()}}" id="{{inputId()}}" value="{{inputValue()}}" class="form-control" [disabled]="desabilitado()" />
+  <label class="form-label"></label>
+  <input
+    [formControl]="input"
+    [value]="inputValue()"
+    class="form-control"
+    (input)="onValueChange($event)"
+  />
 </div>
 

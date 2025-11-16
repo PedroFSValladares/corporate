@@ -6,7 +6,7 @@ export class FuncionarioCompleto{
   cpf : string = "";
   telefone: string = "";
   email : string = "";
-  cargoId: number = 0;
+  cargoId: string = '';
   matricula : string = "";
   ativo : boolean = false;
   endereco : Endereco = new Endereco();
