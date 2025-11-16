@@ -10,7 +10,6 @@
           [appInputLabel]="'Nome:'"
           [appInputId]="'nome'"
           [appInputName]="'nome'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.nome"></app-basic-input>
       </div>
       <div class="col">
@@ -29,12 +28,16 @@
           [appInputLabel]="'E-mail:'"
           [appInputId]="'email'"
           [appInputName]="'email'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.email"
         ></app-basic-input>
       </div>
       <div class="col">
-        <app-cargo-selector [appSelectName]="'cargo'" [appInputLabel]="'Cargo:'" [carregarTudo]="true" [valorVazio]="false" [inputValue]="funcionario.cargoId.toString()"></app-cargo-selector>
+        <app-basic-selector
+          [appSelectName]="'cargo'"
+          [appInputLabel]="'Cargo:'"
+          [itens]="cargos"
+          [(inputValue)]="funcionario.cargoId"
+        ></app-basic-selector>
       </div>
       <div class="col">
         <app-basic-input
@@ -52,12 +55,15 @@
           [appInputLabel]="'Telefone:'"
           [appInputId]="'telefone'"
           [appInputName]="'telefone'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.telefone"
         ></app-basic-input>
       </div>
       <div class="col-2">
-        <app-toogle-input inputName="ativo" label="Status:" [inputValue]="'true'"></app-toogle-input>
+        <app-toogle-input
+          inputName="ativo"
+          [appInputLabel]="'Status:'"
+          [(inputValue)]="funcionario.ativo"
+        ></app-toogle-input>
       </div>
     </div>
 
@@ -69,7 +75,6 @@
           [appInputName]="'cep'"
           [appInputLabel]="'CEP:'"
           [appInputId]="'cep'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.endereco.cep"
         ></app-basic-input>
       </div>
@@ -80,7 +85,6 @@
           [appInputName]="'logradouro'"
           [appInputLabel]="'Logradouro:'"
           [appInputId]="'logradouro'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.endereco.logradouro"
         ></app-basic-input>
       </div>
@@ -89,7 +93,6 @@
           [appInputName]="'bairro'"
           [appInputLabel]="'Bairro:'"
           [appInputId]="'bairro'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.endereco.bairro"
         ></app-basic-input>
       </div>
@@ -100,12 +103,15 @@
           [appInputName]="'complemento'"
           [appInputLabel]="'Complemento:'"
           [appInputId]="'complemento'"
-          [desabilitado]="true"
           [(inputValue)]="funcionario.endereco.complemento"
         ></app-basic-input>
       </div>
       <div class="col">
-        <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf"></app-estado-selector>
+        <app-basic-selector
+          [appInputLabel]="'UF:'"
+          [itens]="estados"
+          [(inputValue)]="funcionario.endereco.uf"
+        ></app-basic-selector>
       </div>
     </div>
 

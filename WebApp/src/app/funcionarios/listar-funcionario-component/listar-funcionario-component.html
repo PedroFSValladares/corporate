@@ -8,18 +8,22 @@
     </div>
     <div class="row">
       <div class="col">
-          <app-basic-input type="text" label="Nome:" inputName="nome"></app-basic-input>
+          <app-basic-input type="text" [appInputLabel]="'Nome:'" ></app-basic-input>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <app-basic-input type="text" label="Matricula:" inputName="matricula"></app-basic-input>
+        <app-basic-input type="text" [appInputLabel]="'Matricula:'" inputName="matricula"></app-basic-input>
       </div>
       <div class="col">
-        <app-basic-selector [itens]="status" label="Status" inputName="status"></app-basic-selector>
+        <app-basic-selector [itens]="status" [appInputLabel]="'Status'" inputName="status"></app-basic-selector>
       </div>
       <div class="col">
-        <app-cargo-selector [carregarTudo]="true" [valorVazio]="true" label="Cargo:" inputName="cargo"></app-cargo-selector>
+        <app-basic-selector
+          [valorVazio]="true"
+          [itens]="cargos"
+          [appInputLabel]="'Cargos:'"
+        ></app-basic-selector>
       </div>
     </div>
     <div class="row mt-3">

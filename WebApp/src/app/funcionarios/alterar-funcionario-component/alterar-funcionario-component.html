@@ -107,7 +107,11 @@
         ></app-basic-input>
       </div>
       <div class="col">
-        <app-estado-selector inputName="UF" label="UF" [valorVazio]="false" [inputValue]="funcionario.endereco.uf"></app-estado-selector>
+        <app-basic-selector
+          [appInputLabel]="'UF:'"
+          [itens]="estados"
+          [(inputValue)]="funcionario.endereco.uf"
+        ></app-basic-selector>
       </div>
     </div>
 

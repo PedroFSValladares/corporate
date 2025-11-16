@@ -1,7 +1,7 @@
 import {
   ChangeDetectorRef,
   Component,
-  ElementRef,
+  ElementRef, input, OnInit,
   QueryList,
   ViewChild,
   ViewChildren
@@ -14,7 +14,9 @@ import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
 import {SelectorOption} from '../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
 import {TableActions} from '../../layouts/table-actions/table-actions';
-import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
+import {InputLabel} from '../../directives/input-label';
+import {FuncionariosPage} from '../FuncionariosPage';
+import {CargoService} from '../../services/cargo-service/cargo-service';
 
 @Component({
   selector: 'app-listar-funcionario-component',
@@ -27,23 +29,23 @@ import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
     NgbDropdownMenu,
     NgbDropdownItem,
     TableActions,
-    CargoSelector,
+    InputLabel
   ],
   templateUrl: './listar-funcionario-component.html',
   styleUrl: './listar-funcionario-component.css'
 })
-export class ListarFuncionarioComponent{
+export class ListarFuncionarioComponent extends FuncionariosPage implements OnInit{
   constructor(
-    private funcionarioService: FuncionarioService,
-    private cdr: ChangeDetectorRef) {
+    private _funcionarioService: FuncionarioService,
+    private _cargoService: CargoService,
+    private _cdr: ChangeDetectorRef) {
+    super(_funcionarioService, _cargoService, _cdr);
   }
 
   @ViewChildren(BasicInput, {read:  ElementRef})
   formInputs: QueryList<ElementRef> = new QueryList<ElementRef>();
   @ViewChildren(BasicSelector, {read:  ElementRef})
   formSelectors: QueryList<ElementRef> = new QueryList<ElementRef>();
-  @ViewChild(CargoSelector, {read:  ElementRef})
-  cargoSelector: ElementRef|undefined;
 
 
   funcionarios : FuncionarioResumido[] = [];
@@ -60,12 +62,12 @@ export class ListarFuncionarioComponent{
 
   buscarFuncionarios(event: PointerEvent): void {
     event.preventDefault();
-    this.funcionarioService.obterTodosOsFuncionarios().subscribe(response => {
+    this._funcionarioService.obterTodosOsFuncionarios().subscribe(response => {
       this.funcionarios = response.data
       this.paginar(1);
       this.paginationEnabled = true;
       this.montarListaDePaginas()
-      this.cdr.detectChanges();
+      this._cdr.detectChanges();
     })
   }
 
@@ -76,8 +78,6 @@ export class ListarFuncionarioComponent{
     this.qntdPaginas = [];
     this.formInputs.forEach(input => {input.nativeElement.querySelector('input').value = ''});
     this.formSelectors.forEach(input => {input.nativeElement.querySelector('select').value = ''});
-    if(this.cargoSelector)
-      this.cargoSelector.nativeElement.querySelector('select').value = ''
     this.paginationEnabled = false;
     this.pageOffset = 1;
     this.numeroPaginaAtual = 1;
@@ -104,5 +104,9 @@ export class ListarFuncionarioComponent{
     if(this.funcionarios.length % 10 > 0){
       this.qntdPaginas.push(Math.trunc(this.funcionarios.length / this.qntdResgistrosAMostrar) + 1);
     }
+  }
+
+  ngOnInit(): void {
+    this.obterCargos();
   }
 }

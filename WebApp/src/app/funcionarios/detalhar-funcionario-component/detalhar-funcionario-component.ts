@@ -4,43 +4,43 @@ import {FuncionarioService} from '../../services/funcionario-service/funcionario
 import {ActivatedRoute} from '@angular/router';
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
 import {Location} from '@angular/common';
-import {CargoSelector} from '../../inputs/cargo-selector/cargo-selector';
 import {Division} from '../../layouts/division/division';
-import {EstadoSelector} from '../../inputs/estado-selector/estado-selector';
 import {ToogleInput} from '../../inputs/toogle-input/toogle-input';
 import {ListSelector} from '../../inputs/list-selector/list-selector';
 import {InputName} from '../../directives/input-name';
 import {InputLabel} from '../../directives/input-label';
 import {InputId} from '../../directives/input-id';
 import {SelectName} from '../../directives/select-name';
+import {BasicSelector} from '../../inputs/basic-selector/basic-selector';
+import {FuncionariosPage} from '../FuncionariosPage';
+import {CargoService} from '../../services/cargo-service/cargo-service';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',
   imports: [
     BasicInput,
-    CargoSelector,
     Division,
-    EstadoSelector,
     ToogleInput,
     ListSelector,
     InputName,
     InputLabel,
     InputId,
-    SelectName
+    SelectName,
+    BasicSelector
   ],
   templateUrl: './detalhar-funcionario-component.html',
   styleUrl: './detalhar-funcionario-component.css'
 })
-export class DetalharFuncionarioComponent implements OnInit {
+export class DetalharFuncionarioComponent extends FuncionariosPage implements OnInit {
 
   constructor(
-    private funcionarioService: FuncionarioService,
+    private _funcionarioService: FuncionarioService,
+    private _cargoService: CargoService,
     private route: ActivatedRoute,
-    private cdr : ChangeDetectorRef,
+    private _cdr : ChangeDetectorRef,
     private location: Location) {
+    super(_funcionarioService, _cargoService, _cdr);
   }
-
-  funcionario : FuncionarioCompleto|null = null;
 
   ngOnInit(): void {
     let funcionarioCpf = this.route.snapshot.paramMap.get('cpf')
@@ -48,17 +48,6 @@ export class DetalharFuncionarioComponent implements OnInit {
       funcionarioCpf = ""
     }
     this.obterFuncionario(funcionarioCpf);
-  }
-  obterFuncionario(funcionarioCpf:string){
-    this.funcionarioService.obterFuncionarioPorCpf(funcionarioCpf).subscribe({
-      next: result => {
-        this.funcionario = result.data
-        this.cdr.detectChanges()
-      },
-      error: error => {
-        console.error(error);
-      }
-    })
   }
 
   voltarPagina(){
