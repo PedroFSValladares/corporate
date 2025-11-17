@@ -15,6 +15,7 @@ import {BasicSelector} from '../../../inputs/basic-selector/basic-selector';
 import {SelectorOption} from '../../../model/SelectorOption';
 import {CargoService} from '../../../services/cargo-service/cargo-service';
 import {FuncionariosPage} from '../FuncionariosPage';
+import {TransporteService} from '../../../services/transporte-service/transporte-service';
 
 @Component({
   selector: 'app-alterar-funcionario-component',
@@ -34,11 +35,12 @@ import {FuncionariosPage} from '../FuncionariosPage';
 })
 export class AlterarFuncionarioComponent extends FuncionariosPage implements OnInit {
   constructor(private _funcionarioService: FuncionarioService,
+              private _transporteService: TransporteService,
               private _cargoService: CargoService,
               private route: ActivatedRoute,
               private _cdr : ChangeDetectorRef,
               private location: Location) {
-    super(_funcionarioService, _cargoService, _cdr);
+    super(_funcionarioService, _transporteService, _cargoService, _cdr);
   }
 
   ngOnInit(): void {
@@ -49,8 +51,8 @@ export class AlterarFuncionarioComponent extends FuncionariosPage implements OnI
     this.obterFuncionario(funcionarioCpf);
     this.obterCargos();
     this.setEstados();
+    this.obterTransportes();
   }
-
 
   voltarPagina(){
     this.location.back();

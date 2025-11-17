@@ -2,8 +2,11 @@
   <div class="row">
     <label class="form-label"></label>
     <div class="col">
-      <select class="form-control">
-        <option></option>
+      <select class="form-control" [formControl]="input">
+        <option value=""></option>
+        @for(item of selectorItens(); track item){
+          <option value="{{item.value}}">{{ item.name }}</option>
+        }
       </select>
     </div>
     <div class="col mb-2">
@@ -13,9 +16,9 @@
     </div>
   </div>
   <ul class="selection-area rounded">
-    @if (itensSelecionados != undefined) {
-      @for (item of itensSelecionados; track item){
-        <li>{{item.toString()}}</li>
+    @if (itens != undefined) {
+      @for (item of itens; track item){
+        <li>{{item}}</li>
       }
     }
   </ul>

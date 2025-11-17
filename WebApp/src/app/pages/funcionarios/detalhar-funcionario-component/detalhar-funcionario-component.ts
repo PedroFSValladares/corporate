@@ -14,6 +14,7 @@ import {SelectName} from '../../../directives/select-name';
 import {BasicSelector} from '../../../inputs/basic-selector/basic-selector';
 import {FuncionariosPage} from '../FuncionariosPage';
 import {CargoService} from '../../../services/cargo-service/cargo-service';
+import {TransporteService} from '../../../services/transporte-service/transporte-service';
 
 @Component({
   selector: 'app-detalhar-funcionario-component',
@@ -35,11 +36,12 @@ export class DetalharFuncionarioComponent extends FuncionariosPage implements On
 
   constructor(
     private _funcionarioService: FuncionarioService,
+    private _transporteService: TransporteService,
     private _cargoService: CargoService,
     private route: ActivatedRoute,
     private _cdr : ChangeDetectorRef,
     private location: Location) {
-    super(_funcionarioService, _cargoService, _cdr);
+    super(_funcionarioService, _transporteService, _cargoService, _cdr);
   }
 
   ngOnInit(): void {

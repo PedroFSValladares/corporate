@@ -17,6 +17,7 @@ import {TableActions} from '../../../layouts/table-actions/table-actions';
 import {InputLabel} from '../../../directives/input-label';
 import {FuncionariosPage} from '../FuncionariosPage';
 import {CargoService} from '../../../services/cargo-service/cargo-service';
+import {TransporteService} from '../../../services/transporte-service/transporte-service';
 
 @Component({
   selector: 'app-listar-funcionario-component',
@@ -37,9 +38,10 @@ import {CargoService} from '../../../services/cargo-service/cargo-service';
 export class ListarFuncionarioComponent extends FuncionariosPage implements OnInit{
   constructor(
     private _funcionarioService: FuncionarioService,
+    private _transporteService: TransporteService,
     private _cargoService: CargoService,
     private _cdr: ChangeDetectorRef) {
-    super(_funcionarioService, _cargoService, _cdr);
+    super(_funcionarioService, _transporteService, _cargoService, _cdr);
   }
 
   @ViewChildren(BasicInput, {read:  ElementRef})
