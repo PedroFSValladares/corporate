@@ -1,4 +1,4 @@
-import {Component, input, OnInit, output} from '@angular/core';
+import {ChangeDetectorRef, Component, input, OnInit, output} from '@angular/core';
 import {BasicInput} from '../basic-input/basic-input';
 import {BasicSelector} from '../basic-selector/basic-selector';
 import {SelectorOption} from '../../model/SelectorOption';
@@ -20,6 +20,9 @@ export class ListSelector implements OnInit {
   itens:string[] = [];
   input:FormControl = new FormControl();
 
+  constructor(private cdr : ChangeDetectorRef) {
+  }
+
   ngOnInit(): void {
       this.itens = this.inputValue();
   }
@@ -29,5 +32,11 @@ export class ListSelector implements OnInit {
     this.itens.push(this.selectorItens().filter(item => item.value == this.input.value)[0].name)
     this.inputValueChange.emit(this.itens)
     this.input.setValue("");
+  }
+
+  deleteItem(event:Event, deletedItem:string){
+    event.preventDefault();
+    this.itens = this.itens.filter(item => item != deletedItem);
+    this.inputValueChange.emit(this.itens)
   }
 }

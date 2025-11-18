@@ -1,4 +1,20 @@
 .selection-area{
   min-height: 300px;
   border: #dee2e6 solid 1px;
+  padding-top: 5px;
+}
+ul{
+  padding: 5px;
+}
+li{
+  list-style: none;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+li:hover{
+  background: #dee2e6;
+}
+.delete-button{
+  padding: 1px 2px;
 }

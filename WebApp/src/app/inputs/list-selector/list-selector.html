@@ -18,7 +18,11 @@
   <ul class="selection-area rounded">
     @if (itens != undefined) {
       @for (item of itens; track item){
-        <li>{{item}}</li>
+        <li>{{item}}
+          <button (click)="deleteItem($event, item)" class="btn btn-danger delete-button">
+            <img src="icons/deletar_24px.png">
+          </button>
+        </li>
       }
     }
   </ul>
