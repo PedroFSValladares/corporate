@@ -4,15 +4,16 @@ import {FuncionarioService} from '../../services/funcionario-service/funcionario
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {ChangeDetectorRef} from '@angular/core';
 import {TransporteService} from '../../services/transporte-service/transporte-service';
+import {KeyValuePairItem} from '../../inputs/commom/KeyValuePairItem';
 
 
 export class FuncionariosPage{
   funcionario : FuncionarioCompleto|null = null;
   cargos : SelectorOption[] = []
   estados : SelectorOption[] = []
-  transportes : SelectorOption[] = []
-  transportesIda:string[] = []
-  transportesVolta:string[] = []
+  transportes : KeyValuePairItem<string, string>[] = []
+  transportesIda : KeyValuePairItem<string, string>[] = []
+  transportesVolta : KeyValuePairItem<string, string>[] = []
 
   constructor(private funcionarioService: FuncionarioService,
               private transporteService: TransporteService,
@@ -36,10 +37,12 @@ export class FuncionariosPage{
   transportesToStringArray(){
     let transportesIda = this.funcionario?.viagens
       .filter(viagem => viagem.tipoViagem == "ida")
-      .map(viagem => `${viagem.transporte.codigo} - ${viagem.transporte.itinerario}`);
+      .map(viagem =>
+        new KeyValuePairItem(viagem.transporte.codigo, `${viagem.transporte.codigo} - ${viagem.transporte.itinerario}`));
     let transportesVolta = this.funcionario?.viagens
       .filter(viagem => viagem.tipoViagem == "volta")
-      .map(viagem => `${viagem.transporte.codigo} - ${viagem.transporte.itinerario}`);
+      .map(viagem =>
+        new KeyValuePairItem(viagem.transporte.codigo, `${viagem.transporte.codigo} - ${viagem.transporte.itinerario}`));
 
     if(transportesIda){
       this.transportesIda = transportesIda
@@ -53,7 +56,7 @@ export class FuncionariosPage{
     this.transporteService.obterTodos().subscribe({
       next: result => {
         this.transportes = result.data
-          .map(transporte => new SelectorOption(transporte.codigo, `${transporte.codigo} - ${transporte.itinerario}`));
+          .map(transporte => new KeyValuePairItem(transporte.codigo, `${transporte.codigo} - ${transporte.itinerario}`));
         this.cdr.detectChanges();
       }
     })

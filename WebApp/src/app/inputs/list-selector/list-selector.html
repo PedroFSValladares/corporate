@@ -5,7 +5,7 @@
       <select class="form-control" [formControl]="input">
         <option value=""></option>
         @for(item of selectorItens(); track item){
-          <option value="{{item.value}}">{{ item.name }}</option>
+          <option value="{{item.key}}">{{ item.value }}</option>
         }
       </select>
     </div>
@@ -17,8 +17,8 @@
   </div>
   <ul class="selection-area rounded">
     @if (itens != undefined) {
-      @for (item of itens; track item){
-        <li>{{item}}
+      @for (item of itens; track item.key){
+        <li>{{item.value}}
           <button (click)="deleteItem($event, item)" class="btn btn-danger delete-button">
             <img src="icons/deletar_24px.png">
           </button>

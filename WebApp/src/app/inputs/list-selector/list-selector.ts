@@ -3,6 +3,7 @@ import {BasicInput} from '../basic-input/basic-input';
 import {BasicSelector} from '../basic-selector/basic-selector';
 import {SelectorOption} from '../../model/SelectorOption';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {KeyValuePairItem} from '../commom/KeyValuePairItem';
 
 @Component({
   selector: 'app-list-selector',
@@ -14,10 +15,10 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './list-selector.css'
 })
 export class ListSelector implements OnInit {
-  inputValue = input<string[]>([]);
-  inputValueChange = output<string[]>();
-  selectorItens = input<SelectorOption[]>([]);
-  itens:string[] = [];
+  inputValue = input<KeyValuePairItem<string, string>[]>([]);
+  inputValueChange = output<KeyValuePairItem<string, string>[]>();
+  selectorItens = input<KeyValuePairItem<string, string>[]>([]);
+  itens:KeyValuePairItem<string, string>[] = [];
   input:FormControl = new FormControl();
 
   constructor(private cdr : ChangeDetectorRef) {
@@ -29,14 +30,14 @@ export class ListSelector implements OnInit {
 
   addItem(event: Event): void {
     event.preventDefault();
-    this.itens.push(this.selectorItens().filter(item => item.value == this.input.value)[0].name)
+    this.itens.push(this.selectorItens().filter(item => item.key! == this.input.value)[0]);
     this.inputValueChange.emit(this.itens)
     this.input.setValue("");
   }
 
-  deleteItem(event:Event, deletedItem:string){
+  deleteItem(event:Event, deletedItem:KeyValuePairItem<string, string>){
     event.preventDefault();
-    this.itens = this.itens.filter(item => item != deletedItem);
+    this.itens = this.itens.filter(item => item.key != deletedItem.key);
     this.inputValueChange.emit(this.itens)
   }
 }
