@@ -1,5 +1,4 @@
 import {FuncionarioCompleto} from '../../model/FuncionarioCompleto';
-import {SelectorOption} from '../../model/SelectorOption';
 import {FuncionarioService} from '../../services/funcionario-service/funcionario-service';
 import {CargoService} from '../../services/cargo-service/cargo-service';
 import {ChangeDetectorRef} from '@angular/core';
@@ -9,8 +8,8 @@ import {KeyValuePairItem} from '../../inputs/commom/KeyValuePairItem';
 
 export class FuncionariosPage{
   funcionario : FuncionarioCompleto|null = null;
-  cargos : SelectorOption[] = []
-  estados : SelectorOption[] = []
+  cargos : KeyValuePairItem<string, string>[] = []
+  estados : KeyValuePairItem<string, string>[] = []
   transportes : KeyValuePairItem<string, string>[] = []
   transportesIda : KeyValuePairItem<string, string>[] = []
   transportesVolta : KeyValuePairItem<string, string>[] = []
@@ -65,7 +64,7 @@ export class FuncionariosPage{
   obterCargos(){
     this.cargoService.obterCargos().subscribe({
       next: result => {
-        this.cargos = result.data.map(cargo => new SelectorOption(cargo.id.toString(), cargo.nome))
+        this.cargos = result.data.map(cargo => new KeyValuePairItem(cargo.id.toString(), cargo.nome))
         this.cdr.detectChanges();
       },
       error: error => {
@@ -104,6 +103,6 @@ export class FuncionariosPage{
       'TO'
     ]
 
-    this.estados = estados.map(estado => new SelectorOption(estado, estado));
+    this.estados = estados.map(estado => new KeyValuePairItem(estado, estado));
   }
 }

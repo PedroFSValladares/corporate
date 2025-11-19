@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
-import {SelectorOption} from '../../../model/SelectorOption';
 import {CargoService} from '../../../services/cargo-service/cargo-service';
+import {KeyValuePairItem} from '../../../inputs/commom/KeyValuePairItem';
 
 @Component({
   selector: 'app-incluir-funcionario-component',
@@ -9,7 +9,7 @@ import {CargoService} from '../../../services/cargo-service/cargo-service';
   styleUrl: './incluir-funcionario-component.css'
 })
 export class IncluirFuncionarioComponent implements OnInit {
-  protected cargoOption: SelectorOption[] = [];
+  protected cargoOption: KeyValuePairItem<string, string>[] = [];
 
   constructor(private location:Location, private cargoService:CargoService, private cdr : ChangeDetectorRef) {
 
@@ -24,7 +24,7 @@ export class IncluirFuncionarioComponent implements OnInit {
   ngOnInit(): void {
     this.cargoService.obterCargos().subscribe({
       next: result => {
-        this.cargoOption = result.data.map(item => new SelectorOption(item.id.toString(), item.nome))
+        this.cargoOption = result.data.map(item => new KeyValuePairItem(item.id.toString(), item.nome))
         this.cdr.detectChanges();
       }
     })

@@ -10,16 +10,16 @@
       </select>
     </div>
     <div class="col mb-2">
-      <button (click)="addItem($event)" class="btn btn-success">
+      <button (click)="addItem($event)" class="btn btn-success" [disabled]="input.value == '' || input.value == null">
         <img src="icons/adicionar_24px.png">
       </button>
     </div>
   </div>
   <ul class="selection-area rounded">
     @if (itens != undefined) {
-      @for (item of itens; track item.key){
-        <li>{{item.value}}
-          <button (click)="deleteItem($event, item)" class="btn btn-danger delete-button">
+      @for (item of itens; track item[0]){
+        <li>{{item[1].value}}
+          <button (click)="deleteItem($event, item[0])" class="btn btn-danger delete-button">
             <img src="icons/deletar_24px.png">
           </button>
         </li>

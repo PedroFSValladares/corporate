@@ -1,7 +1,6 @@
 import {ChangeDetectorRef, Component, input, OnInit, output} from '@angular/core';
-import {SelectorOption} from '../../model/SelectorOption';
-import {BasicInput} from '../basic-input/basic-input';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {KeyValuePairItem} from '../commom/KeyValuePairItem';
 
 @Component({
   selector: 'app-basic-selector',
@@ -12,7 +11,7 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './basic-selector.css'
 })
 export class BasicSelector implements OnInit {
-  itens = input<SelectorOption[]>([]);
+  itens = input<KeyValuePairItem<string, string>[]>([]);
   valorVazio = input<boolean>(true);
   desabilitado = input<boolean>(false);
   inputValue = input<string>('');

@@ -1,9 +1,8 @@
 import {
   ChangeDetectorRef,
   Component,
-  ElementRef, input, OnInit,
+  ElementRef, OnInit,
   QueryList,
-  ViewChild,
   ViewChildren
 } from '@angular/core';
 import {FuncionarioResumido} from '../../../model/FuncionarioResumido';
@@ -11,13 +10,13 @@ import {FuncionarioService} from '../../../services/funcionario-service/funciona
 import {RouterLink} from '@angular/router';
 import {BasicInput} from '../../../inputs/basic-input/basic-input';
 import {BasicSelector} from '../../../inputs/basic-selector/basic-selector';
-import {SelectorOption} from '../../../model/SelectorOption';
 import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
 import {TableActions} from '../../../layouts/table-actions/table-actions';
 import {InputLabel} from '../../../directives/input-label';
 import {FuncionariosPage} from '../FuncionariosPage';
 import {CargoService} from '../../../services/cargo-service/cargo-service';
 import {TransporteService} from '../../../services/transporte-service/transporte-service';
+import {KeyValuePairItem} from '../../../inputs/commom/KeyValuePairItem';
 
 @Component({
   selector: 'app-listar-funcionario-component',
@@ -51,9 +50,9 @@ export class ListarFuncionarioComponent extends FuncionariosPage implements OnIn
 
 
   funcionarios : FuncionarioResumido[] = [];
-  status: SelectorOption[] = [
-    new SelectorOption("true", "Ativo"),
-    new SelectorOption("false", "Inativo")
+  status: KeyValuePairItem<string, string>[] = [
+    new KeyValuePairItem("true", "Ativo"),
+    new KeyValuePairItem("false", "Inativo")
   ];
   paginaAtual: FuncionarioResumido[] = [];
   numeroPaginaAtual: number = 1;

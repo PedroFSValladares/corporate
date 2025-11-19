@@ -10,7 +10,7 @@
         <option value=""></option>
       }
       @for (item of itens(); track item){
-        <option value="{{item.value}}" [selected]="inputValue() == item.value">{{item.name}}</option>
+        <option value="{{item.value}}" [selected]="inputValue() == item.value">{{item.value}}</option>
       }
     </select>
 </div>
